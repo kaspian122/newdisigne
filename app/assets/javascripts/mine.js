@@ -5,12 +5,15 @@ function delclass(){
     $('#third-scr').attr('class','top-menu-elem');
     $('#four-scr-scr').attr('class','top-menu-elem');
 }
-function delclassel() {
+function delid() {
+    for (var i = 1; i < 9; i++) {
+        $('#s'+i+'h').attr('id','s1');
+    }
 }
 $(document).ready(function(){
     $(document).ready(function() {
 
-        $('#first-scr').on('click', function () {
+        $('#first-scr' ).on('click', function () {
             $('html,body').animate({scrollTop: $('#scope-block').offset().top - 64});
             delclass();
             $(this).attr('class','top-menu-elem-active');
@@ -27,21 +30,37 @@ $(document).ready(function(){
             delclass();
             $(this).attr('class','top-menu-elem-active');
         });
-        $('#four-scr-scr').on('click', function () {
-            window.scrollTo(0,("#virtual-tour-block").offset().top);
-            delclass();
-            $(this).attr('class','top-menu-elem-active');
+        $('#s1').on('click', function () {
+            delid();
+            $(this).attr('id','s1h')
         });
-        $(document).onscroll(function(){
-            $(window).scroll(function() {
-                var top = $(document).scrollTop();
-                var kek = $('#top-block').height;
-                if (top > kek) $('nav').addClass('fixed'); //200 - это значение высоты прокрутки страницы для добавления класс
-                else $('nav').removeClass('fixed');
-            });
+        $('#s2').on('click', function () {
+            delid();
+            $(this).attr('id','s2h')
         });
-
-
-
+        $('#s3').on('click', function () {
+            delid();
+            $(this).attr('id','s3h')
+        });
+        $('#s4').on('click', function () {
+            delid();
+            $(this).attr('id','s4h')
+        });
+        $('#s5').on('click', function () {
+            delid();
+            $(this).attr('id','s5h')
+        });
+        $('#s6').on('click', function () {
+            delid();
+            $(this).attr('id','s6h')
+        });
+        $('#s7').on('click', function () {
+            delid();
+            $(this).attr('id','s7h')
+        });
+        $('#s8').on('click', function () {
+            delid();
+            $(this).attr('id','s8h')
+        });
     });
 });

@@ -86,7 +86,7 @@ nav{
   padding: 19px;
   font-size: 20px;
   cursor: pointer;
-  border-bottom: 2px solid #fff;
+  border-bottom: 5px solid #fff;
 }
 .top-menu-elem:hover{
   color: #FFFFFF;
@@ -106,13 +106,15 @@ nav{
 #clients-block .block-head {
     text-align: center;
 }
-.border-button, .full-button{
+.border-button, .full-button, input.full-button{
   margin: auto auto auto auto ;
   text-transform: uppercase !important;
   width: 285px!important;
   text-align: center !important;
   box-sizing: border-box !important;
   font-weight: 400 !important;
+  border-bottom-style: none !important;
+  font-size: 22px !important;
   cursor: pointer;
 }
 .border-button{
@@ -121,10 +123,12 @@ nav{
     color: #FF7629;
     padding: 12px !important;
 }
-.full-button{
+.full-button, input.full-button{
   background: #FF7629;
   color: #fff;
   padding: 15px !important;
+  border: none;
+  font: 300 22PX 'Segoe UI' !important;
 }
 .full-button:hover{
   background: rgb(14, 78, 173);
@@ -390,13 +394,15 @@ div.service p{
   overflow: hidden;
 }
 .image{
-  background: url("<%= image_path('poresherto.png') %>") no-repeat;
+  background: url("<%= image_path('poresherto.png') %>") no-repeat center;
   width: 100%;
-  height: 100%;
-  background-size: 100% 80%;
+  height: 90%;
+  background-size: cover;
   z-index: 201;
-  margin-top: 6%;
-  margin-bottom: 10%;
+  margin-top: 60px;
+  margin-bottom: 60px;
+  padding: 0;
+  /*-o-object-fit: fill;*/
 }
 .image-filter{
   background: url("<%= image_path('resheto.png') %>") repeat;
@@ -446,56 +452,73 @@ div.service p{
   border: 2px solid #BABABA;
   box-sizing: border-box;
 }
-.selector-item:hover  .selector-icon{
-  border: 5px solid #4C6084;
+.selector-item:hover  .selector-icon,
+#s1h .selector-icon,
+#s1h .selector-icon,
+#s2h .selector-icon,
+#s3h .selector-icon,
+#s4h .selector-icon,
+#s5h .selector-icon,
+#s6h .selector-icon,
+#s7h .selector-icon,
+#s8h .selector-icon{
+  border: 5px solid #4C6084 !important;
 }
 
 .selector-item:nth-child(1) .selector-icon{
   background: url("<%= image_path('Vector1.png') %>") no-repeat center;
 }
-.selector-item:nth-child(1):hover  .selector-icon{
+.selector-item:nth-child(1):hover  .selector-icon,
+#s1h .selector-icon{
   background: url("<%= image_path('Vector1h.png') %>") no-repeat center;
 }
 .selector-item:nth-child(2) .selector-icon{
   background: url("<%= image_path('Vector.png') %>") no-repeat center;
 }
-.selector-item:nth-child(2):hover  .selector-icon{
+.selector-item:nth-child(2):hover  .selector-icon,
+#s2h .selector-icon{
   background: url("<%= image_path('Vectorh.png') %>") no-repeat center;
 }
 .selector-item:nth-child(3) .selector-icon{
   background: url("<%= image_path('Vector-1.png') %>") no-repeat center;
 }
-.selector-item:nth-child(3):hover  .selector-icon{
+.selector-item:nth-child(3):hover  .selector-icon,
+#s3h .selector-icon{
   background: url("<%= image_path('Vector-1h.png') %>") no-repeat center;
 }
 .selector-item:nth-child(4) .selector-icon{
   background: url("<%= image_path('Vector-2.png') %>") no-repeat center;
 }
-.selector-item:nth-child(4):hover  .selector-icon{
+.selector-item:nth-child(4):hover  .selector-icon,
+#s4h .selector-icon{
   background: url("<%= image_path('Vector-2h.png') %>") no-repeat center;
 }
 .selector-item:nth-child(5) .selector-icon{
   background: url("<%= image_path('Vector-6.png') %>") no-repeat center;
 }
-.selector-item:nth-child(5):hover  .selector-icon{
+.selector-item:nth-child(5):hover  .selector-icon,
+#s5h .selector-icon{
   background: url("<%= image_path('Vector-3h.png') %>") no-repeat center;
 }
 .selector-item:nth-child(6) .selector-icon{
   background: url("<%= image_path('Vector-5.png') %>") no-repeat center;
 }
-.selector-item:nth-child(6):hover  .selector-icon{
+.selector-item:nth-child(6):hover  .selector-icon,
+#s6h .selector-icon{
   background: url("<%= image_path('Vector-4h.png') %>") no-repeat center;
 }
 .selector-item:nth-child(7) .selector-icon{
   background: url("<%= image_path('Vector-4.png') %>") no-repeat center;
 }
-.selector-item:nth-child(7):hover  .selector-icon{
+.selector-item:nth-child(7):hover  .selector-icon,
+#s7h .selector-icon{
   background: url("<%= image_path('Vector-5h.png') %>") no-repeat center;
 }
 .selector-item:nth-child(8) .selector-icon{
   background: url("<%= image_path('Vector-3.png') %>") no-repeat center;
 }
-.selector-item:nth-child(8):hover  .selector-icon{
+.selector-item:nth-child(8):hover  .selector-icon,
+#s8h .selector-icon{
   background: url("<%= image_path('Vector-6h.png') %>") no-repeat center;
 }
 .selector-item {
@@ -514,8 +537,16 @@ div.service p{
 .selector-item p{
   margin-top: 8px;
 }
-.selector-item:hover{
-  color: #FF7629;
+.selector-item:hover,
+#s1h,
+#s2h,
+#s3h,
+#s4h,
+#s5h,
+#s6h,
+#s7h,
+#s8h{
+  color: #FF7629 !important;
 }
 #scope-block-content{
   display: flex;
@@ -544,10 +575,57 @@ div.service p{
   top: 61px;
   left: 78px;
 }
-.fixed{
+#order-block{
+  background: url("<%= image_path('orderfon.png') %>") no-repeat center;
+  background-size: cover;
+}
+#order-block-content{
+  display: flex;
+  justify-content: start;
+  flex-flow: row wrap;
+}
+#order-block-content{
+  width: 830px;
   text-align: center;
-  background: #121623;
-  box-sizing: content-box;
-  position: fixed;
-  z-index: 999;
+}
+#order-block .block-head{
+  color: #FFFFFF;
+}
+input.full-button{
+}
+input#index_fio,
+input#index_adress,
+input#index_phone,
+input#index_company{
+  color: #000;
+  font-family: Segoe UI;
+  font-style: normal;
+  font-weight: normal;
+  background: #FFF;
+  padding: 16px;
+  font-size: 16px;
+  width: 400px;
+  box-sizing: border-box;
+  border: none;
+  margin-right: 8px;
+  margin-bottom: 15px;
+}
+input#index_company,
+input#index_adress{
+  margin-left: 8px;
+  margin-right: 0;
+}
+textarea#index_comment{
+  color: #000;
+  font-family: Segoe UI;
+  font-style: normal;
+  font-weight: normal;
+  width: 822px;
+  border: none;
+  background: #FFF;
+  padding: 16px;
+  font-size: 16px;
+  box-sizing: border-box;
+  resize: none;
+  height: 200px;
 }
