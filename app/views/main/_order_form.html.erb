@@ -2,7 +2,7 @@
 <div id="order-block-content">
   <%= form_with scope: :index, url: index_path,  method: "POST", class: "buy-form" ,local: true do |form| %>
     <%= form.text_field :fio, placeholder: "Имя *", :required => true, :minlength => 3 %>
-    <%= form.email_field :adress, placeholder: "E-mail *", :required => true %>
+    <%= form.email_field :email, placeholder: "E-mail *", :required => true %>
     <%= form.text_field :phone, placeholder: "Телефон *", :required => true, :type => 'tel', :pattern => '^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$' %>
     <%= form.text_field :company, placeholder: "Название компании *", :required => true %>
     <%= form.text_area :comment, placeholder: "Опишите свой вопрос или оставьте заявку и мы с Вами свяжемся! *" , raw: 5%>

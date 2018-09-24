@@ -4,15 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="shortcut icon" href="<%= image_path('icon.png') %>" type="image/x-icon">
+    <title>Flowdox СУПД - Система управления проектной деятельностью</title>
     <%= stylesheet_link_tag "mainstyle", :media => "all" %>
     <%= javascript_include_tag "jquery-3.3.1.min.js" %>
-    <%= javascript_include_tag "mine.js" %>
-    <%= javascript_include_tag "fullpage.min" %>
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
     <title><%= @title %></title>
   </head>
   <body>
-    <%= yield %>
+    <div id="wrapper">
+      <header>
+        <div id="top-block">
+          <div class="image">
+            <div class="image-filter">
+              <div id="top-block-content">
+                <div id="main-logo">
+                  <img src="  <%= image_path('Union.png') %>  ">
+                  <h3>Flowdox СУПД</h3>
+                  <p>Система управления проектной деятельностью</p>
+                </div>
+                <h2>Новый уровень управления проектами</h2>
+                <div class="border-button"> Оставить заявку </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <nav>
+        <ul class="top-menu">
+          <li class="top-menu-elem" id="first-scr">О системе</li>
+          <li class="top-menu-elem" id="second-scr">Виртуальный тур</li>
+          <li class="top-menu-elem" id="third-scr">О компании</li>
+          <li class="top-menu-elem" id="four-scr">Контакты</li>
+        </ul>
+      </nav>
+      <div id="content">
+        <%= yield %>
+      </div>
+      </div>
+      <footer>
+        <div id="footer-content">
+          <div class="ssp-logo">
+            <p>
+              СибирьСофтПроект
+            </p>
+          </div>
+          <p>
+            ООО “СибирьСофтПроект”<br>
+            г. Томск, пр. Развития, д.8<br>
+            634055
+          </p>
+          <p>
+            Тел.: (3822) 90-10-32<br>
+            Email: sales@sib-soft.ru
+          </p>
+        </div>
+      </footer>
   </body>
   <%= javascript_include_tag "mine.js" %>
 </html>

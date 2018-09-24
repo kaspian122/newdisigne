@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+</head>
+<body>
+<h1>Тестовый запрос</h1>
+<p>
+  Заявка на "Систему управления проектной деятельности" от <%= @data.fio %> из компании <%= @data.company %>
+</p>
+<p>
+  ФИО:  <br><%= @data.fio %><br><br>
+  E-mail:  <br><%= @data.email %><br><br>
+  Phone:  <br><%= @data.phone %><br><br>
+  Company:  <br><%= @data.company %><br><br>
+  Comment:  <br><%= @data.comment %><br><br>
+  Отпралена:  <br><%= Time.zone.now %><br><>
+</p>
+
+</body>
+</html>
