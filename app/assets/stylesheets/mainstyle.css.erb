@@ -24,11 +24,15 @@ body {
 #suit-block,
 #about-us-block,
 #order-block,
-#provider-block{
+#provider-block,
+#comments-block
+{
   width: 100%;
   margin-bottom: 60px;
 }
-
+a{
+  text-decoration: none;
+}
 #demo-link-block-content,
 #clients-content,
 #virtual-tour-block-content,
@@ -38,6 +42,9 @@ body {
 #order-block-content,
 #provide-block-content,
 #virtual-tour-block-content,
+#quality,
+#comments-block-content,
+#top-menu,
 .block-head{
   margin-left: auto !important;
   margin-right: auto !important;
@@ -50,42 +57,97 @@ nav{
   text-align: center;
   background: #121623;
   box-sizing: content-box;
-  position: sticky;
   top: 0;
   z-index: 999;
   margin-top: 0;
   margin-bottom: 60px;
-  padding-top: 0.8rem;
+  padding-top: 0rem;
+  padding-bottom: 5px;
+}
+nav.fixed{
+  width: 100%;
+  position: fixed;
+  padding-top: 0rem;
+  padding-bottom: 0;
+  text-align: center;
+}
+/*nav.fixed ul:before{*/
+/*  content: "          ";*/
+/*  height: 65px;*/
+/*  width: 65px;*/
+/*  background-image: url("<%#= image_path('icon.png') %>");*/
+/*  background-size: cover;*/
+/*  margin-right: 100px;*/
+/*  margin-top: -20px;*/
+/*  overflow: fragments;*/
+/*}*/
 
+
+nav.fixed .top-menu{
+  display: flex;
+  justify-content: center;
+  margin: 0 auto 0 auto;
+  padding: 0;
+  width: 1260px;
+}
+nav.fixed .top-menu .full-button{
+  display: block;
+  width: 155px !important;
+  height: 40px;
+  font-size: 20px ;
+  padding: 4px;
+  margin:   0 0 0 50px;
+  border-radius: 10px;
+  transition: 200ms;
+}
+nav.fixed .top-menu img{
+  display: block;
+  width: 45px;
+  margin: 5px 70px 5px 0;
+  padding: 0;
+  cursor: pointer;
+  transition: 2000ms;
 }
 .top-menu{
   list-style: none;
   color: #87CEEB;
   background: none;
   box-sizing: border-box;
-  height: 50.5px;
-  margin-bottom: 0;
+  height: 69px;
   margin-top: 0;
+  padding-top: 0;
+  margin-bottom: 0px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  padding-left: 0;
+}
+.top-menu .full-button,
+.top-menu img{
+  display: none;
+}
+#quality{
+  background: url("<%= image_path('quality.PNG') %>");
+  background-size: 100% 100%;
+  height: 320px;
+}
+.top-menu li{
 }
 .top-menu-elem{
   box-sizing: border-box;
-  width: 110px;
-  display: inline;
-  margin-right: 20px;
   padding: 19px;
   font-size: 20px;
   cursor: pointer;
+  min-width: 190px;
 }
 .top-menu-elem-active{
   color: #FFFFFF;
   box-sizing: border-box;
-  width: 110px;
-  display: inline;
-  margin-right: 20px;
   padding: 19px;
-  padding-bottom: 18px;
   font-size: 20px;
   cursor: pointer;
+  min-width: 190px;
   border-bottom: 3px solid #fff;
 }
 .top-menu-elem:hover{
@@ -109,12 +171,12 @@ nav{
 .border-button, .full-button, input.full-button{
   margin: auto auto auto auto ;
   text-transform: uppercase !important;
-  width: 285px!important;
+  width: 285px !important;
   text-align: center !important;
   box-sizing: border-box !important;
   font-weight: 400 !important;
   border-bottom-style: none !important;
-  font-size: 22px !important;
+  font-size: 22px;
   cursor: pointer;
 }
 .border-button{
@@ -126,9 +188,9 @@ nav{
 .full-button, input.full-button{
   background: #FF7629;
   color: #fff;
-  padding: 15px !important;
+  padding: 15px;
   border: none;
-  font: 400 22PX 'Segoe UI' !important;
+  font: 400 22PX 'Segoe UI' ;
 }
 .full-button:hover{
   background: rgb(14, 78, 173);
@@ -184,6 +246,12 @@ div.service{
     padding: 0 12px 0 12px;
     margin: 10px;
     align-items: center;
+    background: #FFF;
+    transition: all .2s ease-in-out;
+}
+.service:hover{
+  transform: scale(1.1);
+  z-index: 201;
 }
 div.service img{
     width: 100px;
@@ -205,9 +273,31 @@ div.service p{
     background-size: auto 100%;
     position: relative;
     overflow: hidden;
+  transition: all 225ms ease-in-out;
+}
+.target:hover{
+  transform: scale(1.1);
+}
+.target ul{
+  position: absolute;
+  font-size: 14.2px;
+  top: 225px;
+  width: 295px;
+  height: 225px;
+  color: #FFF;
+  list-style: none;
+  padding: 1em 0 1em 0.5em ;
+  font-weight: 400;
+  box-sizing: border-box;
+  left: 0;
+  background: rgba(14, 78, 173, 0.73);
+  margin: 0;
+}
+.target ul li{
+  margin: 0;
 }
 .target-name{
-  background: rgba(14, 78, 173, 0.73) ;
+  background: rgba(14, 78, 173, 0.73);
   transform: translate(2px);
   color: #FFF;
   font-size: 24px;
@@ -290,6 +380,10 @@ div.service p{
 #about-us-block-content{
   display: flex;
   flex-flow: row nowrap;
+}
+.full-button a{
+  text-decoration: none;
+  color: #FFF;
 }
 .a-u-b-c-element{
   flex-basis: 410px;
@@ -386,7 +480,7 @@ div.service p{
   background: url("<%= image_path('image.png') %>") center no-repeat;
 }
 #top-block{
-  height: 94vh;
+  height: 93vh;
   background: #121623;
   z-index: 200;
   box-sizing: border-box;
@@ -620,8 +714,38 @@ textarea#index_comment{
   resize: none;
   height: 200px;
 }
+.confirm-private-politic{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 540px;
+  margin: 20px auto auto auto;
+}
+#pet_cat{
+  text-align: center;
+  font-style: normal;
+  Font-Size: 22px;
+  font-weight:  400;
+  width: 18px;
+  height: 18px;
+  margin-right: 18px;
+}
+.confirm-private-politic:after{
+  content: '*';
+  color: #FF7629;
+  margin-top: -20px;
+}
 label{
   color: #FFF;
+  width: 90%;
+  font-size: 18px;
+  text-align: start;
+}
+label span{
+  color: #FF7629;
+  text-decoration: underline;
+  cursor: pointer;
 }
 footer{
   background: #121623;
@@ -668,9 +792,10 @@ footer{
   top: 61px;
   left: 78px;
   overflow: hidden;
-  padding: 0 /*7px 50px 11px 50px*/;
+  padding: 0;
   box-sizing: border-box;
-
+  margin: 0;
+  display: flex;
 }
 .dp-b-c {
   width: 100%;
@@ -678,30 +803,36 @@ footer{
   color: #FFF;
   text-align: center;
   padding: 0;
-  margin: -7px 0 0 0;
+  margin: 0 0 0 0;
   box-sizing: border-box;
   background: rgb(18, 22, 35);
+  list-style: none;
+  clear: both;
 }
 
 
 .display-block-content-head {
   font-weight: 300;
-  margin-top: 7px;
+  margin-top: 0;
   height: 84.5px;
   margin-bottom: 15px;
   font-size: 32px;
   padding: 7px 50px 0 50px;
-
+  width: 100%;
+  box-sizing: border-box;
 }
 .dp-b-c ul{
   list-style: none;
   text-align: start;
   font-size: 19px;
   padding: 0 50px 0 50px;
+  width: 569px;
+  box-sizing: border-box;
 }
 .dp-b-c ul li{
   margin-top: 10px;
   margin-bottom: 0;
+  box-sizing: border-box;
 }
 #virtual-tour-block-content{
   text-align: center;
@@ -755,12 +886,13 @@ footer{
   width: 405px;
   height: 260px;
   box-sizing: border-box;
-  background-size: auto 105%;
+  background-size: 105% 100%;
   overflow: hidden;
-  background-image: url(<%= image_path('vt2.png') %>);
+  background-image: url(<%= image_path('demonst.png') %>);
   cursor: pointer;
   position: relative;
 }
+
 .document-name{
   background: rgba(14, 78, 173, 0.73) ;
   color: #FFF;
@@ -774,9 +906,10 @@ footer{
   height: 85px;
 }
 .virtual-tour-semi-block:last-child {
-  background-image: url(<%= image_path('vt3.png') %>);
+  background:  url(<%= image_path('presi.png') %>) center ;
 }
 .virtual-tour-semi-block img{
+  max-width: 100px;
   margin-left: -40px;
   top: 50px;
   position: absolute;
@@ -785,5 +918,36 @@ footer{
   top: 70px;
 }
 #vt-s-b-c-1{
-  background-image: url(<%= image_path('vt1.png') %>);
+  background-image: url(<%= image_path('vidos.png') %>);
+}
+#comments-block-content{
+  display: flex;
+  flex-flow: row nowrap;
+
+}
+.comment{
+  height: 320px;
+  width: 320px;
+  box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.25);
+  padding: 11px;
+  margin: 22px;
+  transition: all .2s ease-in-out;
+  overflow: hidden;
+}
+.comment p{
+  font-size: 15px;
+}
+.comment:hover{
+  transform: scale(1.1);
+  z-index: 201;
+}
+.comment-head{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: start;
+  align-items: baseline;
+}
+.comment-content{
+  padding-top: 20px;
+  border-top: 1px solid #BABABA;
 }

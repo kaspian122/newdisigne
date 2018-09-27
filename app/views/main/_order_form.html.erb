@@ -6,9 +6,11 @@
     <%= form.text_field :phone, placeholder: "Телефон *", :required => true, :type => 'tel', :pattern => '^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$' %>
     <%= form.text_field :company, placeholder: "Название компании *", :required => true %>
     <%= form.text_area :comment, placeholder: "Опишите свой вопрос или оставьте заявку и мы с Вами свяжемся! *" , raw: 5%>
-    <%= check_box_tag(:pet_cat, :required => true) %>
+
+    <p class="confirm-private-politic">
+      <%= check_box_tag(:pet_cat, :required => true) %>
     <%= label_tag(:pet_cat, "Я ознакомлен(а) с правилами политики конфиденциальности
-                             и даю согласие на обработку персональных данных") %>
+                             и даю согласие на обработку персональных данных") %></p>
     <p>
       <%= form.submit :sblbtn , value:'Отправить заявку', class: "full-button"%>
     </p>
