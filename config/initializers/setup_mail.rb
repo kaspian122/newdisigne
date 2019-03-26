@@ -5,7 +5,7 @@ ActionMailer::Base.smtp_settings = {
     port:                 587,
     domain:               'supd.com',
     user_name:            'dbnfkbq222',
-    password:             'KaSPiaN12',
+    password:             '',
     authentication:       'plain',
     enable_starttls_auto: true
 }
